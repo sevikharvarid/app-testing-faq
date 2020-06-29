@@ -11,11 +11,17 @@
         android:icon="@drawable/nav_ask"
         android:title="@string/nav_question" />
     <item
-        android:id="@+id/navBtnContact"
-        android:icon="@drawable/nav_feedback"
-        android:title="@string/nav_contact" />
-    <item
+        android:id="@+id/navBtnProfile"
+        android:icon="@drawable/ic_live_help_black_24dp"
+        android:title="@string/profile" />
+   <!-- <item
         android:id="@+id/navBtnProfile"
         android:icon="@drawable/nav_user"
         android:title="@string/profile" />
+    -->
+    <item
+        android:id="@+id/navBtnContact"
+        android:icon="@drawable/nav_feedback"
+        android:title="@string/nav_contact" />
+
 </menu>

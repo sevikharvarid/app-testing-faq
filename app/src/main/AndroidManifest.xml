@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.madforumapp">
+    package="com.example.appuser">
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewQuestion" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".FragmentChild" />
+        <activity android:name=".addCategory" />
+        <activity android:name=".HomeFragment2" />
+        <activity
+            android:name=".ViewQuestion"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Edit_Reply" />
         <!--
          <activity
@@ -24,7 +35,9 @@
             android:label="@string/title_activity_show_reply"
             android:theme="@style/AppTheme.NoActionBar" />
         -->
-        <activity android:name=".MainFeed" android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".MainFeed"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".UserActivitydashbord" />
         <activity android:name=".showReply" />
         <activity android:name=".forgotpassword2" />
@@ -37,7 +50,7 @@
         <activity android:name=".FeedBack3" />
         <activity android:name=".ContactUs" />
         <activity android:name=".ContactUs2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,10 +58,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <supports-screens
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:smallScreens="true" />
 
 </manifest>

@@ -1,70 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="25dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
-    card_view:cardCornerRadius="5dp"
-    android:padding="10dp"
-    >
-
+    android:layout_gravity="center"
+    android:layout_margin="30dp"
+    card_view:cardCornerRadius="10dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="views" />
-
-            <TextView
-                android:id="@+id/views"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:gravity="center"
-                android:text="10"
-                android:textAlignment="center"
-                android:textColor="#050505"
-                android:textSize="35sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="25dp"
             android:gravity="left"
             android:orientation="vertical"
 
             >
-
-            <TextView
-                android:id="@+id/question_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Question Title"
-                android:textColor="#050505"
-                android:textSize="27sp" />
-
             <TextView
                 android:id="@+id/question_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="by Lakshan Perera"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/question_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question Title"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:textSize="15sp" />
+
         </LinearLayout>
     </LinearLayout>
 
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

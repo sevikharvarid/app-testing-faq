@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MadForumApp</string>
+    <string name="app_name">FAQChatApp</string>
     <string name="logoTitle">qExpert</string>
 
 
@@ -41,6 +41,7 @@
     <string name="ask_title">Title</string>
     <string name="ask_description">Description</string>
     <string name="ask_description_hint">Describe your question as clearly as possible</string>
+    <string name="ask_category">Category</string>
     <string name="ask_post_button">Post</string>
 
 
@@ -83,6 +84,9 @@
     <string name="reply_hint">Add an answer</string>
     <string name="add_reply">Add</string>
     <string name="change_reply">Update</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

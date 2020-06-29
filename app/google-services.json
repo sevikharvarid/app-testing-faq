@@ -1,50 +1,79 @@
 {
   "project_info": {
-    "project_number": "989637825828",
-    "firebase_url": "https://madforumapp-74204.firebaseio.com",
-    "project_id": "madforumapp-74204",
-    "storage_bucket": "madforumapp-74204.appspot.com"
+    "project_number": "215065459780",
+    "firebase_url": "https://app-project-1b3c9.firebaseio.com",
+    "project_id": "app-project-1b3c9",
+    "storage_bucket": "app-project-1b3c9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:989637825828:android:e63336ca9f0bf0d4ea4fb1",
+        "mobilesdk_app_id": "1:215065459780:android:1b2e1b8aa43a6ce7f2d011",
         "android_client_info": {
-          "package_name": "com.example.madforumapp"
+          "package_name": "com.example.app_admin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "989637825828-ljf7gead97hlq1ppmd5r60ou9911tsdm.apps.googleusercontent.com",
+          "client_id": "215065459780-6aipd6tn6etrlb1ih9flr5kid24ml9fn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.madforumapp",
-            "certificate_hash": "2452e15617ff9dbf1685007d61b559705726e090"
+            "package_name": "com.example.app_admin",
+            "certificate_hash": "ef0f54cd7defb960f999fb4539bd922f36301e73"
           }
         },
         {
-          "client_id": "989637825828-guk0poug3a6f1ekvs43i8eef7eeao2vl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.madforumapp",
-            "certificate_hash": "a76139786a5395301e4eb41e0e86548cab589471"
-          }
-        },
-        {
-          "client_id": "989637825828-rq4k72o1fvs6t5rn7t0o7002i9eqc90q.apps.googleusercontent.com",
+          "client_id": "215065459780-8s2app4mhegc47rmntbhlf9nb81na3qs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDpkmkuq8R6wpO5YPXeQkRBdETt4myzuAc"
+          "current_key": "AIzaSyD9DJGBT5_Z581DIN4jOskfQcEzlPSQ-kA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "989637825828-rq4k72o1fvs6t5rn7t0o7002i9eqc90q.apps.googleusercontent.com",
+              "client_id": "215065459780-8s2app4mhegc47rmntbhlf9nb81na3qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215065459780:android:05d52ff7ca6cf1f8f2d011",
+        "android_client_info": {
+          "package_name": "com.example.appuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215065459780-l2i2q10flje0nr2b4pa204341ppebutb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appuser",
+            "certificate_hash": "ef0f54cd7defb960f999fb4539bd922f36301e73"
+          }
+        },
+        {
+          "client_id": "215065459780-8s2app4mhegc47rmntbhlf9nb81na3qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9DJGBT5_Z581DIN4jOskfQcEzlPSQ-kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215065459780-8s2app4mhegc47rmntbhlf9nb81na3qs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
