@@ -28,6 +28,7 @@ public class MainFeed extends AppCompatActivity {
     private AskFragment askFragment;
     private SettingsFragment settingsFragment;
     private FeedbackFragment feedbackFragment;
+    private TestFragment testFragment;
 
 
     @Override
@@ -36,6 +37,7 @@ public class MainFeed extends AppCompatActivity {
         setContentView(R.layout.activity_main_feed);
 
         homeFragment = new HomeFragment2();
+        testFragment = new TestFragment();
         askFragment = new AskFragment();
         settingsFragment = new SettingsFragment();
         feedbackFragment = new FeedbackFragment();
@@ -45,7 +47,8 @@ public class MainFeed extends AppCompatActivity {
         frameLayout = findViewById(R.id.navFrame);
 //        Intent i = new Intent(MainFeed.this,HomeActivity.class);
         //      startActivity(i);
-        changeFragment(homeFragment);
+        //changeFragment(homeFragment);
+        changeFragment(testFragment);
 
 //        profileIcon.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -61,7 +64,8 @@ public class MainFeed extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.navBtnHome:
-                        changeFragment(homeFragment);
+                       // changeFragment(homeFragment);
+                        changeFragment(testFragment);
                         //Intent i = new Intent(MainFeed.this,HomeActivity.class);
                         //startActivity(i);
                         return true;
@@ -88,11 +92,11 @@ public class MainFeed extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bottomNavigationView.getMenu().getItem(0).setChecked(true);
-        changeFragment(homeFragment);
+        changeFragment(testFragment);
     }
 
     public void ChangeToHome() {
-        changeFragment(homeFragment);
+        changeFragment(testFragment);
         bottomNavigationView.getMenu().getItem(0).setChecked(true);
     }
 

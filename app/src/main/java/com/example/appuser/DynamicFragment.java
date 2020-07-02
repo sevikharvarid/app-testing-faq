@@ -29,29 +29,39 @@ public class DynamicFragment extends Fragment {
     private FirebaseAuth auth;
     private String desc,tilt,cat;
     private HomeFragment2 homeFragment2;
+    private int page;
+    private String title;
 
-    public static DynamicFragment newInstance() { return new DynamicFragment();
+
+    public static DynamicFragment newInstance(int page, String title) {
+        DynamicFragment fragment = new DynamicFragment();
+        Bundle args = new Bundle();
+        args.putInt("someInt", page);
+        args.putString("someTitle", title);
+        fragment.setArguments(args);
+        return fragment;
     }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        page = getArguments().getInt("someInt", 0);
+        title = getArguments().getString("someTitle");
     }
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dynamic_fragment_layout, container, false);
 
-
         mainListView = view.findViewById(R.id.question_listview);
+        //String searchText = getArguments().getString("data");
+        //Log.e("String : ",searchText);
         /*if(getArguments()!=null){
             String searchText = getArguments().getString("data");
             initViews(searchText);
         }*/
-        String searchText = getArguments().getString("data");
-        initViews("Teknologi");
-        Log.e("getArgs : ",searchText);
+        Log.e("String : ", title);
+         initViews("Teknologi");
+        //Log.e("getArgs : ",searchText);
        /* final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference dbRef = database.getReference("Question");
         final DatabaseReference db = dbRef.child(Objects.requireNonNull(auth.getUid()));

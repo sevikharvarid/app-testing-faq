@@ -30,8 +30,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,6 +46,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
@@ -58,8 +62,13 @@ public class HomeFragment2 extends Fragment {
     ArrayAdapter<String> adapter;
     public DynamicFragment frg;
 
+    private ListView mainListView;
+    private FirebaseAuth auth;
+    private String desc, tilt, cat;
+    private HomeFragment2 homeFragment2;
+
+
     public HomeFragment2() {
-        // Required empty public constructor
     }
 
     @Override
@@ -75,7 +84,8 @@ public class HomeFragment2 extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_home_fragment2, container, false);
         viewPager = view.findViewById(R.id.viewpager);
-        mTabLayout =  view.findViewById(R.id.tabs);
+        mTabLayout = view.findViewById(R.id.tabs);
+        //mainListView = view.findViewById(R.id.question_listview);
         initViews();
 
         return view;
@@ -83,18 +93,28 @@ public class HomeFragment2 extends Fragment {
 
     }
 
+    public static class MyFragment extends Fragment {
+        public MyFragment() {
 
-    private void initViews(){
+        }
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            return super.onCreateView(inflater, container, savedInstanceState);
+        }
 
-       
+    }
+
+    private void initViews() {
+
+
         viewPager.setOffscreenPageLimit(5);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                String data = tab.getText().toString();
 
+                //  init(data);
             }
 
             @Override
@@ -112,22 +132,24 @@ public class HomeFragment2 extends Fragment {
 
 
     }
+
+
     private void setDynamicFragmentToTabLayout() {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("SpinnerData");
         listener = reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot item:dataSnapshot.getChildren()){
-                    //spinnerDataList.add(item.getValue().toString());
+                for (DataSnapshot item : dataSnapshot.getChildren()) {
                     mTabLayout.addTab(mTabLayout.newTab().setText(item.getValue().toString()));
-                    x = item.getValue().toString();
-                    DynamicFragmentAdapter mDynamicFragmentAdapter = new DynamicFragmentAdapter(getFragmentManager(), mTabLayout.getTabCount());
+
+                    DynamicFragmentAdapter mDynamicFragmentAdapter = new DynamicFragmentAdapter(getFragmentManager(),
+                            mTabLayout.getTabCount(),
+                            Collections.singletonList(item.getValue().toString()));
                     viewPager.setAdapter(mDynamicFragmentAdapter);
                     viewPager.setCurrentItem(0);
-                }
 
-                //adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -135,15 +157,6 @@ public class HomeFragment2 extends Fragment {
 
             }
         });
-       /* for (int i = 0; i < 10; i++) {
-
-            mTabLayout.addTab(mTabLayout.newTab().setText("Category: " + i));
-        }
-        DynamicFragmentAdapter mDynamicFragmentAdapter = new DynamicFragmentAdapter(getFragmentManager(), mTabLayout.getTabCount());
-        viewPager.setAdapter(mDynamicFragmentAdapter);
-        viewPager.setCurrentItem(0);
-    */
     }
-
 
 }
